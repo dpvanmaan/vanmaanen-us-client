@@ -1,0 +1,20 @@
+<div style="padding: 30px 15px;">
+  <h1>Posts:</h1>
+  <div ng-repeat="post in posts.results">
+    <div "panel panel-default">
+      <div class="panel-heading">
+	<h2>{{ post.title }}</h2></div>
+      <div class="panel-body">
+	<p>{{ post.id }}: {{ post.abstract }}</p>
+	<a ng-href="#/blog/{{ post.id }}">read more</a>
+      </div>
+
+      <hr>
+    
+    </div>
+  </div>
+
+  <a class="button button-default" ng-show="posts.previous" ng-href="{{previouspage}}" > Prev </a>
+  <a class="button button-default" ng-show="posts.next" ng-href="{{nextpage}}"> Next </a>
+  
+</div>
