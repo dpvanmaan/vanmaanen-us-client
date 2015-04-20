@@ -103,3 +103,23 @@ body {
   font-family: serif;
   margin-top: 3px;
 }
+.navbar-right {
+  margin-right: 10px;
+}
+
+#sidebar {
+
+ background: #444444;
+ margin-top: -20px ;
+ padding-top: 20 px;
+ bottom: 100%;
+}
+#sidebar  h4{
+ color: #cccccc;
+}
+#sidebar  a{
+ color: #e7f5f7;
+}
+#sidebar  a:hover{
+ background: #1414ff;
+}
