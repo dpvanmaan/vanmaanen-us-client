@@ -1,21 +1,20 @@
 var siteControllers= angular.module('siteControllers',[])
-siteControllers.controller('MainCtrl',['$scope','Page',function($scope,Page){
-    $scope.Page=Page
+siteControllers.controller('MainCtrl',['$scope',function($scope){
+    console.log("main- ");
+    console.log($scope.$state);
 }]);
-siteControllers.controller('HomeCtrl',['$scope','$http','Page','Blog','Misc',function($scope,$http,Page,Blog,Misc){
-    Page.setTitle("Home");
-    console.log("home");
+siteControllers.controller('HomeCtrl',['$scope','Blog','Misc',function($scope,Blog,Misc){
+    console.log("home- ");
+    console.log($scope.$state.$current.data.title);
     $scope.recent_posts=Blog.posts.get();
-    console.log($scope.recent_posts)
+    console.log($scope.recent_posts);
     
 }]);
-siteControllers.controller('BlogCtrl',['$scope','$routeParams','Page','Blog',function($scope,$routeParams,Page, Blog){
-
-    $scope.blogId=$routeParams.blogId
-    Page.setTitle("Blog "+$scope.blogId);
+siteControllers.controller('BlogCtrl',['$scope','$stateParams','Blog',function($scope,$stateParams,Blog){
+    $scope.blogId=$stateParams.blogId
     console.log("blog");
-    console.log($routeParams.blogId);
-    $scope.post=Blog.posts.get({id: $routeParams.blogId},function(){
+    console.log($stateParams.blogId);
+    $scope.post=Blog.posts.get({id: $stateParams.blogId},function(){
 	console.log($scope.post);
 	$scope.created=new Date($scope.post.created).toString();
 	console.log(new Date($scope.post.created).toString());
@@ -23,13 +22,12 @@ siteControllers.controller('BlogCtrl',['$scope','$routeParams','Page','Blog',fun
     
     
 }]);
-siteControllers.controller('BlogListCtrl',['$scope','$http','Page','Blog','$routeParams',function($scope,$http,Page, Blog,$routeParams){
-    Page.setTitle("Blog");
+siteControllers.controller('BlogListCtrl',['$scope','Blog','$stateParams',function($scope,Blog,$stateParams){
     console.log("blog");
     $scope.nextpage=null;
     $scope.previouspage=null;
-    if($routeParams.page){
-	params={page:$routeParams.page};
+    if($stateParams.page){
+	params={page:$stateParams.page};
     }
     else{
 	params={}
@@ -66,11 +64,9 @@ siteControllers.controller('BlogListCtrl',['$scope','$http','Page','Blog','$rout
     console.log($scope.posts)
     
 }]);
-siteControllers.controller('ResumeCtrl',['$scope','$http','Page',function($scope,$http,Page){
-    Page.setTitle("Resume");
+siteControllers.controller('ResumeCtrl',['$scope',function($scope){
     console.log("resume");
 }]);
-siteControllers.controller('ProjectsCtrl',['$scope','$http','Page',function($scope,$http,Page){
-    Page.setTitle("Projects");
+siteControllers.controller('ProjectsCtrl',['$scope',function($scope){
     console.log("projects");
 }]);
