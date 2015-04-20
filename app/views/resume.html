@@ -1,11 +1,27 @@
-<div class="container-fluid">
-  <ul class="nav-stacked">
-    <li role="presentation" class="active"><a href="#"> About</a></li>
-    <li >Resume</li>
-    <li role="presentation"><a href="#"> Experience</a></li>
-    <li role="presentation"><a href="#"> Education </a></li>
-    <li role="presentation"><a href="#"> Skills </a></li>
-    <li> <hr></li>
-    <li role="presentation"><a href="#"> Print Resume </a></li>
-  </ul>
+<div  ng-init="sidebarOffcanvas=false">
+  <div  class="row-offcanvas row-offcanvas-left" ng-class="sidebarOffcanvas ? 'active' : ''">
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+	<ul  class="nav nav-pills nav-stacked">
+	  <li role="presentation" ui-sref-active="active"><a ui-sref="resume.about"> About</a></li>
+	  <li ><h4>Resume</h4></li>
+	  <li role="presentation" ui-sref-active="active"><a ui-sref="resume.exp"> Experience</a></li>
+	  <li role="presentation" ui-sref-active="active">
+	    <a ui-sref="resume.education"> Education </a></li>
+	  <li role="presentation" ui-sref-active="active"><a ui-sref="resume.skills"> Skills </a></li>
+	  <li> <hr></li>
+	  <li role="presentation"><a href="#"> Print Resume </a></li>
+	</ul>
+    </div>
+    <div class="col-xs-12 col-sm-9 col-md-7" >
+      <p class="visible-xs pull-left">
+	<button style="margin-top: -30px; background: #444444;"
+		type="button" class="btn btn-primary btn-xs"
+		ng-click="sidebarOffcanvas=!sidebarOffcanvas">
+	  <span class="glyphicon "
+		ng-class="sidebarOffcanvas? 'glyphicon-menu-left':'glyphicon-menu-right'"></span>
+	</button>
+      </p>
+      <div ui-view> </div>
+    </div>
+  </div>
 </div>
