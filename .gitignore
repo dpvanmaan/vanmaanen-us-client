@@ -4,3 +4,6 @@ app/index-old.html
 .tmp
 .sass-cache
 bower_components
+*~
+\#*\#
+.\#*\#
