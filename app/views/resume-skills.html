@@ -1,3 +1,7 @@
-<div class="well">
-  <h1>Skills</h1>
+<h1> Skills</h1>
+<div class="well" ng-repeat="skillCat in data.results">
+  <h2>{{ skillCat.name }}</h2>
+  <p>
+    <span ng-repeat="skill in skillCat.skills">{{ skill }} <span ng-hide="$last"> &middot</span></span>
+  </p>
 </div>
