@@ -1,4 +1,12 @@
-<div  class="well">
-  <h1>EXP</h1>
-  <p>iosorum iduq dufiqh djijo ijsh jifjdi fjdois jiod kksi djifen djjfi sijpo jdi sji ejdo jais jdisfjl jdsi ksl;a .kjlfsi .dj slkjlfdjiwhj wjsxo wqjdilj.</p>
+<div  ng-repeat="expCat in data.results">
+  <h2>{{ expCat.name }} Experiences</h2>
+  <div class="well" ng-repeat="job in expCat.jobs">
+    <h3>{{ job.job_title }} | <i>{{ job.company }} </i></h3>
+    <p> {{ job.start }} - {{ job.current? "present":job.end }} | <em> {{ job.location }}</em></p>
+    <p>
+      {{ job.description  }}
+    </p>
+    
+  </div>
+  <hr>
 </div>
