@@ -64,9 +64,13 @@ siteControllers.controller('BlogListCtrl',['$scope','Blog','$stateParams',functi
     console.log($scope.posts)
     
 }]);
-siteControllers.controller('ResumeCtrl',['$scope',function($scope){
-    console.log("resume");
+siteControllers.controller('ResumeCtrl',[function($scope,ResolveData){
+    console.log(ResolveData);
+    
 }]);
-siteControllers.controller('ProjectsCtrl',['$scope',function($scope){
-    console.log("projects");
-}]);
+siteControllers.controller('ProjectsCtrl',function($scope, projects){
+    console.log(projects);
+    $scope.projects=projects.results;
+    console.log($scope.projects);
+    
+});
