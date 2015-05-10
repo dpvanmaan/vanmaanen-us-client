@@ -4,13 +4,15 @@
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <div class="well">
-      <img class="col-md-3" src="http://placehold.it/140x100">
-      <h2>Project Title</h2>
-      <p>Description Stuff SO fhdaofihasdofhsdifhsachljks
-	ckdka cjdi icjal;dj cjdki jcid ijeij ipad cidojc jaidjfpo jcdiaj jcadiojc jicdjo ajcioja jocdijc
+    <div class="well" ng-repeat="proj in projects">
+      <img class="col-md-3" ng-src="{{ proj.icon }}">
+      <h2>{{ proj.title }}</h2>
+      <p>
+	{{ proj.description }}
       </p>
-      <a href="#">Links</a>
+      <span ng-repeat="link in proj.links">
+	<a ng-href="{{ link.url }}">{{link.title}}</a>
+      </span>
     </div>
   </div>
        
