@@ -1,11 +1,11 @@
 <div class="jumbotron">
-  <h1> Welcome</h1>
+  <h1>{{ welcome.title }}</h1>
   <p> Some stuff</p>
-  <p> <a class="btn btn-primary" role="button" href="#/resume"> More About Me</a></p>
+  <p> <a class="btn btn-primary" role="button" href="#/resume"> {{ welcome.message }}</a></p>
 </div>
 <div>
   <h1> Recent Entries:</h1>
-  <div ng-repeat="post in recent_posts.results" "panel panel-default">
+  <div ng-repeat="post in recent_posts" "panel panel-default">
     <div class="panel-body">
       <h2>{{ post.title }}</h2>
       <p> {{ post.abstract }}</p>
