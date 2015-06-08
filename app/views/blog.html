@@ -1,14 +1,14 @@
 <div class="col-md-2 well">
   <h2>Categories</h2>
   <hr style="border-color: #010101; border-style:solid; color: #010101;">
+  <h4 ng-repeat="cat in cats"><a href="#">{{ cat.name  }}</a></h4>
 </div>
 <div class="col-md-8">
-  <div id="blog-entry">
-    <div ui-view></div>
-  </div>
+   <div ui-view></div>
 </div>
 <div class="col-md-2 well">
   <h2>Tags</h2>
   <hr style="border-color: #010101; border-style:solid; color: #010101;">
-  <p><span ng-repeat=""><a ng-style="{ 'font-size': tagsize+'px' }"></a></span></p>
+  <p><span ng-repeat="tag in tags"><a href="#"> {{ tag.name }} </a></span></p>
+  <p>
 </div>
