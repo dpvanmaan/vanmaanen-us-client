@@ -1,12 +1,12 @@
 <div class="well">
   <h1>Education</h1>
-  <div ng-repeat="school in data.results.edu">
+  <div ng-repeat="school in education">
     <h2>{{ school.degree  }} | {{ school.school }}</h2>
     <p>Graduation: {{ school.grad_date  }}</p>
-    <p> {{ description }}</p>
+    <p> {{ school.description }}</p>
     <hr>
     <p>
-      <b>Select Courses:</b> <span ng-repeat="course in school.courses">{{ course }} <span ng-hide="$last"> &middot</span></span>
+      <b>Select Courses:</b> <span ng-repeat="course in school.courses">{{ course.name }} <span ng-hide="$last"> &middot</span></span>
     </p>
   </div>
 </div>

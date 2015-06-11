@@ -37,7 +37,9 @@ services.factory('Misc',function($resource){
     var subroot=APIROOT+"/misc/";
     return {images: $resource(subroot+'images/:id'),
 	    text: $resource(subroot+'text/:id'),
-	    categories: $resource(subroot+'catgegories/:id')};
+	    categories: $resource(subroot+'catgegories/:id'),
+	    files: $resource(subroot+'files/:id')};
+    
 });
    
     

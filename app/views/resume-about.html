@@ -1,4 +1,11 @@
 <div class="well">
-  <h1>About</h1>
-  <p>{{ results.about }}</p>
+  <h1>{{ about.title }}</h1>
+  <p ng-switch on="about.type">
+    <span ng-switch-when="htm" ng-bind-html="about.message">
+    </span>
+    <span ng-switch-default>
+	{{ about.message }}
+    </span>
+  </p>
+
 </div>
